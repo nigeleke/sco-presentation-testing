@@ -2,6 +2,7 @@ mod add;
 
 use add::*;
 
+#[cfg_attr(test, mutants::skip)]
 pub fn main() {
     let a = 3;
     let b = 5;

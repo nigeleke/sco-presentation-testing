@@ -1,30 +1,64 @@
 
-*** src/add.rs:2:5: replace add -> i32 with 0
+*** src/add.rs:2:5: replace add -> i32 with 1
 
 *** mutation diff:
 --- src/add.rs
-+++ replace add -> i32 with 0
++++ replace add -> i32 with 1
 @@ -1,10 +1,10 @@
  pub fn add(a: i32, b: i32) -> i32 {
--    a + b
-+    0 /* ~ changed by cargo-mutants ~ */
+-    a.saturating_add(b)
++    1 /* ~ changed by cargo-mutants ~ */
  }
  
  #[cfg(test)]
  mod test {
      use super::*;
      use pretty_assertions::assert_eq;
+     use proptest::proptest;
  
-     #[test]
 
 
 *** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --no-run --verbose --package=sco-presentation-testing@0.1.0
-       Fresh yansi v1.0.1
+       Fresh libc v0.2.169
+       Fresh unicode-ident v1.0.14
+       Fresh cfg-if v1.0.0
+       Fresh byteorder v1.5.0
+       Fresh bitflags v2.7.0
+       Fresh autocfg v1.4.0
+       Fresh linux-raw-sys v0.4.15
+       Fresh proc-macro2 v1.0.93
+       Fresh getrandom v0.2.15
+       Fresh once_cell v1.20.2
+       Fresh fastrand v2.3.0
+       Fresh wait-timeout v0.2.0
+       Fresh quote v1.0.38
+       Fresh rand_core v0.6.4
+       Fresh rustix v0.38.43
+       Fresh bit-vec v0.8.0
+       Fresh fnv v1.0.7
+       Fresh quick-error v1.2.3
+       Fresh syn v2.0.96
+       Fresh tempfile v3.15.0
+       Fresh bit-set v0.8.0
+       Fresh rand_xorshift v0.3.0
+       Fresh num-traits v0.2.19
        Fresh diff v0.1.13
+       Fresh yansi v1.0.1
+       Fresh zerocopy-derive v0.7.35
+       Fresh rusty-fork v0.3.0
+       Fresh lazy_static v1.5.0
+       Fresh unarray v0.1.4
+       Fresh regex-syntax v0.8.5
        Fresh pretty_assertions v1.4.1
-       Dirty sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp): the file `src/add.rs` has changed (1736566053.797785830s, 337006598ns after last build at 1736566053.460779232s)
-   Compiling sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp)
-     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name sco_presentation_testing --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=7308a786abe99e8c -C extra-filename=-7308a786abe99e8c --out-dir /tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps -C incremental=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/incremental -L dependency=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps --extern pretty_assertions=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/libpretty_assertions-2c1f0372416beea5.rlib`
+       Fresh mutants v0.0.3
+       Fresh zerocopy v0.7.35
+       Fresh ppv-lite86 v0.2.20
+       Fresh rand_chacha v0.3.1
+       Fresh rand v0.8.5
+       Fresh proptest v1.6.0
+       Dirty sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp): the file `src/add.rs` has changed (1736567403.586529827s, 1s after last build at 1736567402.915516474s)
+   Compiling sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp)
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name sco_presentation_testing --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=f7aa9fe0d0d7c100 -C extra-filename=-f7aa9fe0d0d7c100 --out-dir /tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps -C incremental=/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/incremental -L dependency=/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps --extern mutants=/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps/libmutants-6f76125352a68da7.so --extern pretty_assertions=/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps/libpretty_assertions-2c1f0372416beea5.rlib --extern proptest=/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps/libproptest-cb0aaf6569647e83.rlib`
 warning: unused variable: `a`
  --> src/add.rs:1:12
   |
@@ -40,16 +74,50 @@ warning: unused variable: `b`
   |                    ^ help: if this is intentional, prefix it with an underscore: `_b`
 
 warning: `sco-presentation-testing` (bin "sco-presentation-testing" test) generated 2 warnings
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.27s
-  Executable `/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.64s
+  Executable `/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps/sco_presentation_testing-f7aa9fe0d0d7c100`
 
 *** result: Success
 
 *** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --verbose --package=sco-presentation-testing@0.1.0
-       Fresh yansi v1.0.1
+       Fresh libc v0.2.169
+       Fresh unicode-ident v1.0.14
+       Fresh cfg-if v1.0.0
+       Fresh byteorder v1.5.0
+       Fresh autocfg v1.4.0
+       Fresh proc-macro2 v1.0.93
+       Fresh getrandom v0.2.15
+       Fresh bitflags v2.7.0
+       Fresh linux-raw-sys v0.4.15
+       Fresh once_cell v1.20.2
+       Fresh quote v1.0.38
+       Fresh rand_core v0.6.4
+       Fresh rustix v0.38.43
+       Fresh fastrand v2.3.0
+       Fresh wait-timeout v0.2.0
+       Fresh quick-error v1.2.3
+       Fresh syn v2.0.96
+       Fresh tempfile v3.15.0
+       Fresh bit-vec v0.8.0
+       Fresh fnv v1.0.7
+       Fresh num-traits v0.2.19
+       Fresh rand_xorshift v0.3.0
+       Fresh regex-syntax v0.8.5
+       Fresh zerocopy-derive v0.7.35
+       Fresh rusty-fork v0.3.0
+       Fresh bit-set v0.8.0
+       Fresh lazy_static v1.5.0
        Fresh diff v0.1.13
+       Fresh unarray v0.1.4
+       Fresh yansi v1.0.1
+       Fresh zerocopy v0.7.35
        Fresh pretty_assertions v1.4.1
-       Fresh sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp)
+       Fresh mutants v0.0.3
+       Fresh ppv-lite86 v0.2.20
+       Fresh rand_chacha v0.3.1
+       Fresh rand v0.8.5
+       Fresh proptest v1.6.0
+       Fresh sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp)
 warning: unused variable: `a`
  --> src/add.rs:1:12
   |
@@ -65,8 +133,8 @@ warning: unused variable: `b`
   |                    ^ help: if this is intentional, prefix it with an underscore: `_b`
 
 warning: `sco-presentation-testing` (bin "sco-presentation-testing" test) generated 2 warnings
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
-     Running `/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running `/tmp/cargo-mutants-sco-presentation-testing-nG7DPz.tmp/target/debug/deps/sco_presentation_testing-f7aa9fe0d0d7c100`
 
 running 2 tests
 test test::main_can_invoked ... ok
@@ -75,15 +143,516 @@ test add::test::add_function_works ... FAILED
 failures:
 
 ---- add::test::add_function_works stdout ----
-thread 'add::test::add_function_works' panicked at src/add.rs:12:9:
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
 assertion failed: `(left == right)`
 
 [1mDiff[0m [31m< left[0m / [32mright >[0m :
-[31m<[0m[1;48;5;52;31m0[0m
-[32m>[0m[1;48;5;22;32m8[0m
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m2[0m[32m1[0m[1;48;5;22;32m47483647[0m
 
 
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m2[0m[32m1[0m[1;48;5;22;32m47483647[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m2[0m[32m1[0m[1;48;5;22;32m47483647[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m2[0m[32m1[0m[1;48;5;22;32m47483647[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m2082[0m[32m1[0m[1;48;5;22;32m45982[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m20[0m[32m1[0m[1;48;5;22;32m6680539[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m983947818[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m967581457[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m959398277[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m955306687[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m953260892[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m952237994[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951726545[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951470821[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951342959[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951279028[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951247062[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951231079[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951223088[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951219092[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951217094[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951216095[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215596[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215346[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215221[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215159[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215128[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215112[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215104[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215100[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215098[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m951215097[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m975607548[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m487803774[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m24390[0m[32m1[0m[1;48;5;22;32m887[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m21950943[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m6097547[0m[32m1[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m30487735[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m5243867[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m762[0m[32m1[0m[1;48;5;22;32m933[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m38[0m[32m1[0m[1;48;5;22;32m0966[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m905483[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m95274[0m[32m1[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m476370[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m238[0m[32m1[0m[1;48;5;22;32m85[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m19092[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m59546[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m29773[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m4886[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m7443[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>[0m[1;48;5;22;32m372[0m[32m1[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m860[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m930[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m465[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m232[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m16[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m58[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m29[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<1[0m
+[32m>1[0m[1;48;5;22;32m4[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m7[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m3[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:15:13:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m2[0m
+
+
+thread 'add::test::add_function_works' panicked at src/add.rs:11:5:
+Test failed: assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m1[0m
+[32m>[0m[1;48;5;22;32m2[0m
+
+.
+minimal failing input: a = 0, b = 2
+	successes: 0
+	local rejects: 0
+	global rejects: 0
+
 
 
 failures:

@@ -23,67 +23,7 @@
       },
       "end": {
         "line": 2,
-        "column": 10
-      }
-    },
-    "replacement": "0",
-    "genre": "FnValue"
-  },
-  {
-    "package": "sco-presentation-testing",
-    "file": "src/main.rs",
-    "function": {
-      "function_name": "main",
-      "return_type": "",
-      "span": {
-        "start": {
-          "line": 5,
-          "column": 1
-        },
-        "end": {
-          "line": 10,
-          "column": 2
-        }
-      }
-    },
-    "span": {
-      "start": {
-        "line": 6,
-        "column": 5
-      },
-      "end": {
-        "line": 9,
-        "column": 53
-      }
-    },
-    "replacement": "()",
-    "genre": "FnValue"
-  },
-  {
-    "package": "sco-presentation-testing",
-    "file": "src/add.rs",
-    "function": {
-      "function_name": "add",
-      "return_type": "-> i32",
-      "span": {
-        "start": {
-          "line": 1,
-          "column": 1
-        },
-        "end": {
-          "line": 3,
-          "column": 2
-        }
-      }
-    },
-    "span": {
-      "start": {
-        "line": 2,
-        "column": 5
-      },
-      "end": {
-        "line": 2,
-        "column": 10
+        "column": 24
       }
     },
     "replacement": "-1",
@@ -113,10 +53,10 @@
       },
       "end": {
         "line": 2,
-        "column": 10
+        "column": 24
       }
     },
-    "replacement": "1",
+    "replacement": "0",
     "genre": "FnValue"
   },
   {
@@ -139,44 +79,14 @@
     "span": {
       "start": {
         "line": 2,
-        "column": 7
+        "column": 5
       },
       "end": {
         "line": 2,
-        "column": 8
+        "column": 24
       }
     },
-    "replacement": "*",
-    "genre": "BinaryOperator"
-  },
-  {
-    "package": "sco-presentation-testing",
-    "file": "src/add.rs",
-    "function": {
-      "function_name": "add",
-      "return_type": "-> i32",
-      "span": {
-        "start": {
-          "line": 1,
-          "column": 1
-        },
-        "end": {
-          "line": 3,
-          "column": 2
-        }
-      }
-    },
-    "span": {
-      "start": {
-        "line": 2,
-        "column": 7
-      },
-      "end": {
-        "line": 2,
-        "column": 8
-      }
-    },
-    "replacement": "-",
-    "genre": "BinaryOperator"
+    "replacement": "1",
+    "genre": "FnValue"
   }
 ]

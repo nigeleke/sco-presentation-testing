@@ -105,9 +105,11 @@ Testing presentation to South Coast Software Developers
 
 ## Mutants Testing
 
-* `cargo mutants`; Note this generates warnings on `main` too - but we will focus on `add`
+* Add `#[cfg_attr(test, mutants::skip)]` annotation to `main` while we focus on `add`
+
+* `cargo mutants`
   ```
-  Found [5] mutants to test
+  Found 5 mutants to test
   ok       Unmutated baseline in 1.8s build + 0.1s test
   INFO Auto-set test timeout to 20s
   MISSED   src/add.rs:2:5: replace add -> i32 with 0 in 0.4s build + 0.1s test
@@ -115,7 +117,7 @@ Testing presentation to South Coast Software Developers
   MISSED   src/add.rs:2:5: replace add -> i32 with 1 in 0.4s build + 0.1s test
   MISSED   src/add.rs:2:7: replace + with * in add in 0.3s build + 0.1s test
   MISSED   src/add.rs:2:7: replace + with - in add in 0.3s build + 0.1s test
-  [5] mutants tested in 4s: 6 missed
+  5 mutants tested in 4s: 5 missed
   ```
 
 * Change test:
@@ -123,12 +125,12 @@ Testing presentation to South Coast Software Developers
   assert_eq!(add(3, 5), 8);
   ```
 
-* `cargo mutants`; Again ignoring `main`
+* `cargo mutants`
   ```
-  Found [5] mutants to test
+  Found 5 mutants to test
   ok       Unmutated baseline in 1.0s build + 0.1s test
   INFO Auto-set test timeout to 20s
-  [5] mutants tested in 3s: [0] missed, 5 caught
+  5 mutants tested in 3s: 5 caught
   ```
 
 * but is this good enough?

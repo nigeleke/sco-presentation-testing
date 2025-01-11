@@ -8,7 +8,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 0.955372238,
+          "duration": 8.245310044,
           "process_status": "Success",
           "argv": [
             "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
@@ -20,69 +20,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.050992508,
-          "process_status": "Success",
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "Mutant": {
-          "package": "sco-presentation-testing",
-          "file": "src/main.rs",
-          "function": {
-            "function_name": "main",
-            "return_type": "",
-            "span": {
-              "start": {
-                "line": 5,
-                "column": 1
-              },
-              "end": {
-                "line": 10,
-                "column": 2
-              }
-            }
-          },
-          "span": {
-            "start": {
-              "line": 6,
-              "column": 5
-            },
-            "end": {
-              "line": 9,
-              "column": 53
-            }
-          },
-          "replacement": "()",
-          "genre": "FnValue"
-        }
-      },
-      "summary": "MissedMutant",
-      "log_path": "log/src__main.rs_line_6_col_5.log",
-      "diff_path": "diff/src__main.rs_line_6_col_5.diff",
-      "phase_results": [
-        {
-          "phase": "Build",
-          "duration": 0.354660541,
-          "process_status": "Success",
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--no-run",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        },
-        {
-          "phase": "Test",
-          "duration": 0.050925637,
+          "duration": 0.051195922,
           "process_status": "Success",
           "argv": [
             "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
@@ -119,10 +57,10 @@
             },
             "end": {
               "line": 2,
-              "column": 10
+              "column": 24
             }
           },
-          "replacement": "1",
+          "replacement": "0",
           "genre": "FnValue"
         }
       },
@@ -132,7 +70,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 0.301913145,
+          "duration": 0.653387397,
           "process_status": "Success",
           "argv": [
             "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
@@ -144,7 +82,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.051294274,
+          "duration": 0.051315553,
           "process_status": {
             "Failure": 101
           },
@@ -183,10 +121,10 @@
             },
             "end": {
               "line": 2,
-              "column": 10
+              "column": 24
             }
           },
-          "replacement": "0",
+          "replacement": "1",
           "genre": "FnValue"
         }
       },
@@ -196,7 +134,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 0.301881827,
+          "duration": 0.653078257,
           "process_status": "Success",
           "argv": [
             "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
@@ -208,135 +146,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.051382698,
-          "process_status": {
-            "Failure": 101
-          },
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "Mutant": {
-          "package": "sco-presentation-testing",
-          "file": "src/add.rs",
-          "function": {
-            "function_name": "add",
-            "return_type": "-> i32",
-            "span": {
-              "start": {
-                "line": 1,
-                "column": 1
-              },
-              "end": {
-                "line": 3,
-                "column": 2
-              }
-            }
-          },
-          "span": {
-            "start": {
-              "line": 2,
-              "column": 7
-            },
-            "end": {
-              "line": 2,
-              "column": 8
-            }
-          },
-          "replacement": "-",
-          "genre": "BinaryOperator"
-        }
-      },
-      "summary": "CaughtMutant",
-      "log_path": "log/src__add.rs_line_2_col_7.log",
-      "diff_path": "diff/src__add.rs_line_2_col_7.diff",
-      "phase_results": [
-        {
-          "phase": "Build",
-          "duration": 0.355103721,
-          "process_status": "Success",
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--no-run",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        },
-        {
-          "phase": "Test",
-          "duration": 0.051330339,
-          "process_status": {
-            "Failure": 101
-          },
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        }
-      ]
-    },
-    {
-      "scenario": {
-        "Mutant": {
-          "package": "sco-presentation-testing",
-          "file": "src/add.rs",
-          "function": {
-            "function_name": "add",
-            "return_type": "-> i32",
-            "span": {
-              "start": {
-                "line": 1,
-                "column": 1
-              },
-              "end": {
-                "line": 3,
-                "column": 2
-              }
-            }
-          },
-          "span": {
-            "start": {
-              "line": 2,
-              "column": 7
-            },
-            "end": {
-              "line": 2,
-              "column": 8
-            }
-          },
-          "replacement": "*",
-          "genre": "BinaryOperator"
-        }
-      },
-      "summary": "CaughtMutant",
-      "log_path": "log/src__add.rs_line_2_col_7_001.log",
-      "diff_path": "diff/src__add.rs_line_2_col_7_001.diff",
-      "phase_results": [
-        {
-          "phase": "Build",
-          "duration": 0.352887803,
-          "process_status": "Success",
-          "argv": [
-            "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
-            "test",
-            "--no-run",
-            "--verbose",
-            "--package=sco-presentation-testing@0.1.0"
-          ]
-        },
-        {
-          "phase": "Test",
-          "duration": 0.051096015,
+          "duration": 0.051338254,
           "process_status": {
             "Failure": 101
           },
@@ -375,7 +185,7 @@
             },
             "end": {
               "line": 2,
-              "column": 10
+              "column": 24
             }
           },
           "replacement": "-1",
@@ -388,7 +198,7 @@
       "phase_results": [
         {
           "phase": "Build",
-          "duration": 0.301807213,
+          "duration": 0.703340455,
           "process_status": "Success",
           "argv": [
             "/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo",
@@ -400,7 +210,7 @@
         },
         {
           "phase": "Test",
-          "duration": 0.051000862,
+          "duration": 0.051058083,
           "process_status": {
             "Failure": 101
           },
@@ -414,9 +224,9 @@
       ]
     }
   ],
-  "total_mutants": 6,
-  "missed": 1,
-  "caught": 5,
+  "total_mutants": 3,
+  "missed": 0,
+  "caught": 3,
   "timeout": 0,
   "unviable": 0,
   "success": 0
