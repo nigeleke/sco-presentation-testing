@@ -201,22 +201,22 @@ Testing presentation to South Coast Software Developers
   ```
 
 * `cargo test` fails:
-```
-stored new snapshot /home/nigel/Documents/sco-presentation-testing/src/snapshots/sco_presentation_testing__ui__test__spilt_words.snap.new
-test ui::test::test_spilt_words ... FAILED
-+ more...
-```
+  ```
+  stored new snapshot /home/nigel/Documents/sco-presentation-testing/src/snapshots/sco_presentation_testing__ui__test__spilt_words.snap.new
+  test ui::test::test_spilt_words ... FAILED
+  + more...
+  ```
 
 * `cargo insta review` and accept.
 
 * `cargo test` passes
 
 * amend function:
-```rust
-fn split_words(s: &str) -> Vec<String> {
-    s.split_whitespace().map(|s| s.to_lowercase()).collect()
-}
-```
+  ```rust
+  fn split_words(s: &str) -> Vec<String> {
+      s.split_whitespace().map(|s| s.to_lowercase()).collect()
+  }
+  ```
 
 * `cargo test` fails
 
