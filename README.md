@@ -122,6 +122,13 @@ Testing presentation to South Coast Software Developers
 
 * Change test:
   ```rust
+  assert_eq!(add(2, 2), 4);
+  ```
+
+* `cargo mutants` still fails.
+
+* Change test:
+  ```rust
   assert_eq!(add(3, 5), 8);
   ```
 
