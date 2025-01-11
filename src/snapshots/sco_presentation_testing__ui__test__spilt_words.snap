@@ -1,0 +1,14 @@
+---
+source: src/ui.rs
+expression: words
+---
+- mary
+- had
+- a
+- little
+- "lamb,"
+- she
+- also
+- had
+- a
+- bear.

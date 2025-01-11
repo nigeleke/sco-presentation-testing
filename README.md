@@ -221,3 +221,28 @@ Testing presentation to South Coast Software Developers
 * `cargo test` fails
 
 * `cargo insta review` shows differences
+
+* new test (note the @""):
+  ```rust
+  #[test]
+  fn test_timestamp_and_uuid() {
+      let id = create_id();
+      insta::assert_yaml_snapshot!(id, @"");
+  }
+  ```
+
+* `insta` updated the expected result in code, not in a snapshot file.
+
+* `cargo test` will always fail and `cargo insta review` will always require reviewing.
+
+* add redactions:
+  ```rust
+  insta::with_settings!({filters => vec![
+      (r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", "<timestamp>"),
+      (r"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}", "<uuid>")
+  ]}, {
+      insta::assert_yaml_snapshot!(id, @r#""timestamp <timestamp> id <uuid>""#)
+  });
+  ```
+
+* `cargo test` passes after `cargo insta review`

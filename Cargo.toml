@@ -4,10 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+chrono = "0.4.39"
 mutants = "0.0.3"
+uuid = { version = "1.11.1", features = ["v4"] }
 
 [dev-dependencies]
-insta = { version = "1.42.0", features = ["yaml"] }
+insta = { version = "1.42.0", features = ["yaml", "filters"] }
 pretty_assertions = "1.4.1"
 proptest = "1.6.0"
 
