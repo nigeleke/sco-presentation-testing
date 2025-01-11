@@ -1,0 +1,14 @@
+--- src/add.rs
++++ replace + with * in add
+@@ -1,10 +1,10 @@
+ pub fn add(a: i32, b: i32) -> i32 {
+-    a + b
++    a * /* ~ changed by cargo-mutants ~ */ b
+ }
+ 
+ #[cfg(test)]
+ mod test {
+     use super::*;
+     use pretty_assertions::assert_eq;
+ 
+     #[test]

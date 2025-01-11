@@ -1,0 +1,21 @@
+--- src/main.rs
++++ replace main with ()
+@@ -1,17 +1,14 @@
+ mod add;
+ 
+ use add::*;
+ 
+ pub fn main() {
+-    let a = 3;
+-    let b = 5;
+-    let result = add(a, b);
+-    println!("a: {a} + b: {b} => result: {result}");
++    () /* ~ changed by cargo-mutants ~ */
+ }
+ 
+ #[cfg(test)]
+ mod test {
+     use super::*;
+     use pretty_assertions::assert_eq;
+ 
+     #[test]

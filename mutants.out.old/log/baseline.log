@@ -1,0 +1,35 @@
+
+*** baseline
+
+*** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --no-run --verbose --package=sco-presentation-testing@0.1.0
+    Updating crates.io index
+     Locking 3 packages to latest compatible versions
+   Compiling yansi v1.0.1
+   Compiling diff v0.1.13
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name yansi --edition=2021 /home/nigel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/yansi-1.0.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="alloc"' --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("_nightly", "alloc", "default", "detect-env", "detect-tty", "hyperlink", "is-terminal", "std"))' -C metadata=5dd09c4724da78c8 -C extra-filename=-5dd09c4724da78c8 --out-dir /tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps -L dependency=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps --cap-lints allow`
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name diff --edition=2015 /home/nigel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/diff-0.1.13/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=ee416d39ae5adc0b -C extra-filename=-ee416d39ae5adc0b --out-dir /tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps -L dependency=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps --cap-lints allow`
+   Compiling pretty_assertions v1.4.1
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name pretty_assertions --edition=2018 /home/nigel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pretty_assertions-1.4.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="default"' --cfg 'feature="std"' --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values("alloc", "default", "std", "unstable"))' -C metadata=2c1f0372416beea5 -C extra-filename=-2c1f0372416beea5 --out-dir /tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps -L dependency=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps --extern diff=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps/libdiff-ee416d39ae5adc0b.rmeta --extern yansi=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps/libyansi-5dd09c4724da78c8.rmeta --cap-lints allow`
+   Compiling sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp)
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name sco_presentation_testing --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=7308a786abe99e8c -C extra-filename=-7308a786abe99e8c --out-dir /tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps -C incremental=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/incremental -L dependency=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps --extern pretty_assertions=/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps/libpretty_assertions-2c1f0372416beea5.rlib`
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.76s
+  Executable `/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+
+*** result: Success
+
+*** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --verbose --package=sco-presentation-testing@0.1.0
+       Fresh yansi v1.0.1
+       Fresh diff v0.1.13
+       Fresh pretty_assertions v1.4.1
+       Fresh sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running `/tmp/cargo-mutants-sco-presentation-testing-MHBgjh.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+
+running 2 tests
+test add::test::add_function_works ... ok
+test test::main_can_invoked ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+*** result: Success

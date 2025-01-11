@@ -1,0 +1,6 @@
+src/add.rs:2:5: replace add -> i32 with 0
+src/main.rs:6:5: replace main with ()
+src/add.rs:2:5: replace add -> i32 with -1
+src/add.rs:2:5: replace add -> i32 with 1
+src/add.rs:2:7: replace + with * in add
+src/add.rs:2:7: replace + with - in add

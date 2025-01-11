@@ -1,0 +1,10 @@
+[package]
+name = "sco-presentation-testing"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+pretty_assertions = "1.4.1"
+proptest = "1.6.0"

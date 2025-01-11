@@ -1,0 +1,66 @@
+
+*** src/add.rs:2:7: replace + with * in add
+
+*** mutation diff:
+--- src/add.rs
++++ replace + with * in add
+@@ -1,10 +1,10 @@
+ pub fn add(a: i32, b: i32) -> i32 {
+-    a + b
++    a * /* ~ changed by cargo-mutants ~ */ b
+ }
+ 
+ #[cfg(test)]
+ mod test {
+     use super::*;
+     use pretty_assertions::assert_eq;
+ 
+     #[test]
+
+
+*** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --no-run --verbose --package=sco-presentation-testing@0.1.0
+       Fresh diff v0.1.13
+       Fresh yansi v1.0.1
+       Fresh pretty_assertions v1.4.1
+       Dirty sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp): the file `src/add.rs` has changed (1736566054.561800787s, 360007048ns after last build at 1736566054.201793739s)
+   Compiling sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp)
+     Running `/home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc --crate-name sco_presentation_testing --edition=2021 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 --test --check-cfg 'cfg(docsrs)' --check-cfg 'cfg(feature, values())' -C metadata=7308a786abe99e8c -C extra-filename=-7308a786abe99e8c --out-dir /tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps -C incremental=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/incremental -L dependency=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps --extern pretty_assertions=/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/libpretty_assertions-2c1f0372416beea5.rlib`
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.30s
+  Executable `/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+
+*** result: Success
+
+*** /home/nigel/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo test --verbose --package=sco-presentation-testing@0.1.0
+       Fresh diff v0.1.13
+       Fresh yansi v1.0.1
+       Fresh pretty_assertions v1.4.1
+       Fresh sco-presentation-testing v0.1.0 (/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+     Running `/tmp/cargo-mutants-sco-presentation-testing-zYjbPs.tmp/target/debug/deps/sco_presentation_testing-7308a786abe99e8c`
+
+running 2 tests
+test test::main_can_invoked ... ok
+test add::test::add_function_works ... FAILED
+
+failures:
+
+---- add::test::add_function_works stdout ----
+thread 'add::test::add_function_works' panicked at src/add.rs:12:9:
+assertion failed: `(left == right)`
+
+[1mDiff[0m [31m< left[0m / [32mright >[0m :
+[31m<[0m[1;48;5;52;31m15[0m
+[32m>[0m[1;48;5;22;32m8[0m
+
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    add::test::add_function_works
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p sco-presentation-testing --bin sco-presentation-testing`
+
+*** result: Failure(101)
