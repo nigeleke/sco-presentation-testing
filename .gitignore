@@ -23,3 +23,8 @@ Cargo.lock
 # Added by cargo
 
 /target
+
+# Testing debris
+mutants.out/
+mutants.out.old/
+proptest-regressions/

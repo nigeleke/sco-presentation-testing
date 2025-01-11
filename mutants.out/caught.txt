@@ -1,3 +1,0 @@
-src/add.rs:2:5: replace add -> i32 with 0
-src/add.rs:2:5: replace add -> i32 with 1
-src/add.rs:2:5: replace add -> i32 with -1
