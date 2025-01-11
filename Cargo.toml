@@ -7,5 +7,12 @@ edition = "2021"
 mutants = "0.0.3"
 
 [dev-dependencies]
+insta = { version = "1.42.0", features = ["yaml"] }
 pretty_assertions = "1.4.1"
 proptest = "1.6.0"
+
+[profile.dev.package.insta]
+opt-level = 3
+
+[profile.dev.package.similar]
+opt-level = 3
