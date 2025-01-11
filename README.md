@@ -142,7 +142,7 @@ Testing presentation to South Coast Software Developers
 
 * but is this good enough?
 
-## Property based testing
+## Property-based Testing
 
 * Improve add test
   ```rust
