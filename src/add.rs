@@ -6,7 +6,12 @@ pub fn add(a: i32, b: i32) -> i32 {
 mod test {
     use super::*;
     use pretty_assertions::assert_eq;
-    use proptest::proptest;
+    use proptest::*;
+
+    // #[test]
+    // fn add_function_works() {
+    //     assert_eq!(add(3, 5), 8);
+    // }
 
     proptest! {
         #[test]

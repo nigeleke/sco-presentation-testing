@@ -2,7 +2,7 @@
 source: src/ui.rs
 expression: words
 ---
-- mary
+- Mary
 - had
 - a
 - little
@@ -11,4 +11,4 @@ expression: words
 - also
 - had
 - a
-- bear.
+- bear

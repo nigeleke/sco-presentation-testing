@@ -213,6 +213,7 @@ Testing presentation to South Coast Software Developers
 
 * amend function:
   ```rust
+  #[allow(dead_code)]
   fn split_words(s: &str) -> Vec<String> {
       s.split_whitespace().map(|s| s.to_lowercase()).collect()
   }
@@ -231,6 +232,16 @@ Testing presentation to South Coast Software Developers
   }
   ```
 
+* and the code
+  ```rust
+  #[allow(dead_code)]
+  fn create_id() -> String {
+      let uuid = uuid::Uuid::new_v4();
+      let time = chrono::Local::now();
+      format!("timestamp {} id {}", time.format("%Y-%m-%d %H:%M:%S"), uuid)
+  }
+  ```
+
 * `insta` updated the expected result in code, not in a snapshot file.
 
 * `cargo test` will always fail and `cargo insta review` will always require reviewing.
@@ -241,7 +252,7 @@ Testing presentation to South Coast Software Developers
       (r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", "<timestamp>"),
       (r"[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}", "<uuid>")
   ]}, {
-      insta::assert_yaml_snapshot!(id, @r#""timestamp <timestamp> id <uuid>""#)
+      insta::assert_yaml_snapshot!(id, @"")
   });
   ```
 
