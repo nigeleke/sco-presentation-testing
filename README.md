@@ -86,7 +86,7 @@ Testing presentation to South Coast Software Developers
       use pretty_assertions::assert_eq;
 
       #[test]
-      fn main_can_invoked() {
+      fn main_can_be_invoked() {
           assert_eq!(main(), ());
       }
   }
